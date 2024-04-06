@@ -1,10 +1,10 @@
 pipeline {
     environment {
-        DOCKER_ID = "kentronic"
+        DOCKER_ID = credentials('DOCKER_ID')
         DOCKER_IMAGE_CARTS = "carts"
         DOCKER_TAG = "${BUILD_ID}"
         BUILD_AGENT  = ""
-        //NAMESPACE = credentials("NAMESPACE")
+        NAMESPACE = credentials("NAMESPACE")
     }
 agent any
     stages {
